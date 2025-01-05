@@ -9,11 +9,11 @@ using MEC;
 
 namespace Boogie_Bomb {
     public class pluginCore : Plugin<config> {
-        public static pluginCore;
+        public static pluginCore Instance;
       
         public override void OnEnabled() {
             base.OnEnabled();
-            pluginCore = this;
+            Instance = this;
             RegisterEvents();
             RegisterItems();
         }
@@ -22,7 +22,7 @@ namespace Boogie_Bomb {
             base.OnDisabled();
             UnregisterEvents();
             UnregisterItems();
-            pluginCore = null;
+            Instance = null;
         }
 
         private void RegisterEvents() {
