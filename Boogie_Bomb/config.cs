@@ -8,11 +8,12 @@ using Exiled.CustomItems.API.Features;
 using MEC;
 using Exiled.API.Interfaces;
 
+
 namespace Boogie_Bomb {
     public class config : IConfig {
-        public bool IsEnabled {get; set; } = true;
-        public bool Debug {get; set; }
+        public bool IsEnabled { get; set; } = true;
+        public bool Debug { get; set; }
 
-        public BoogieBomb boogieBomb {get; set; } = new BoogieBomb();
+        public BoogieBomb BoogieBomb { get; set; } = new BoogieBomb();
     }
 }
