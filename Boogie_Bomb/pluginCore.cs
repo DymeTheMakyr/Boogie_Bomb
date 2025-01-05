@@ -8,7 +8,7 @@ using Exiled.CustomItems.API.Features;
 using MEC;
 
 namespace Boogie_Bomb {
-    public class pluginCore : Plugin<Config> {
+    public class pluginCore : Plugin<config> {
         public static pluginCore;
       
         public override void OnEnabled() {
