@@ -34,11 +34,11 @@ namespace Boogie_Bomb {
         }
 
         private void RegisterItems() {
-            Config.BoogieBomb.Register();
+            Config.boogieBomb.Register();
         }
 
         private void UnregisterItems() {
-            Config.BoogieBomb.Unregister();
+            Config.boogieBomb.Unregister();
         }
     }
 }

@@ -7,7 +7,7 @@ using Exiled.CustomItems.API;
 using Exiled.CustomItems.API.Features;
 using MEC;
 using Exiled.API.Interfaces;
-using Boogie_Bomb.Items;
+
 
 namespace Boogie_Bomb {
     public class config : IConfig {
