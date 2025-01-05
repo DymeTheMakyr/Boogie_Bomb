@@ -3,9 +3,12 @@ using Exiled.API.Enums;
 using Exiled.API.Features.Attributes;
 using Exiled.API.Features.Spawn;
 using Exiled.CustomItems.API.Features;
+using Exiled.Events.EventArgs.Map;
+using AudioPlayer.API;
+using Exiled.API.Features;
+using VoiceChat;
 
 namespace Boogie_Bomb.Items {
-    [CustomItem(ItemType.GrenadeFlash)]
     public class BoogieBomb : CustomGrenade {
         public override uint Id { get; set; } = 32;
         public override string Name { get; set; } = "BoogieBomb";
@@ -47,7 +50,12 @@ namespace Boogie_Bomb.Items {
         
         public override bool ExplodeOnCollision { get; set; } = true;
         public override float FuseTime { get; set; } = 5f;
-        
-        
+
+        protected override void OnExploding(ExplodingGrenadeEventArgs ev) {
+            base.OnExploding(ev);
+            List<int> ids = new List<int>();
+            foreach (Player p in ev.TargetsToAffect) ids.Add(p.Id);
+            AudioController.PlayFromFilePlayer(ids, "dependecies/dancetilyourdead.ogg", false, 100F, VoiceChatChannel.Proximity);
+        }
     }
 }

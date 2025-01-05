@@ -1,7 +1,11 @@
-﻿using Boogie_Bomb.Items;
-using Exiled.Loader;
+﻿using System.Collections;
+using System.Collections.Generic;
+using Boogie_Bomb.Items;
 using Exiled.API.Features;
+using Exiled.CustomItems;
 using Exiled.CustomItems.API;
+using Exiled.CustomItems.API.Features;
+using MEC;
 
 namespace Boogie_Bomb {
     public class pluginCore : Plugin<Config> {
@@ -28,12 +32,11 @@ namespace Boogie_Bomb {
         }
 
         private void RegisterItems() {
-            bombItem = new BoogieBomb();
-            bombItem.Register();
+            
         }
 
         private void UnregisterItems() {
-            bombItem.Unregister();
+            Items.BoogieBomb.Unregister();
             bombItem = null;
         }
     }
