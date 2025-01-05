@@ -9,9 +9,8 @@ using MEC;
 
 namespace Boogie_Bomb {
     public class pluginCore : Plugin<Config> {
-        
         public static pluginCore;
-        
+      
         public override void OnEnabled() {
             base.OnEnabled();
             pluginCore = this;
