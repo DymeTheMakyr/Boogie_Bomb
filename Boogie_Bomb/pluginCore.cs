@@ -8,11 +8,12 @@ using Exiled.CustomItems.API.Features;
 using MEC;
 
 namespace Boogie_Bomb {
-    public class pluginCore : Plugin<config> {
-        public BoogieBomb bombItem;
-        
+    public class pluginCore : Plugin<Config> {
+        public static pluginCore;
+      
         public override void OnEnabled() {
             base.OnEnabled();
+            pluginCore = this;
             RegisterEvents();
             RegisterItems();
         }
@@ -21,6 +22,7 @@ namespace Boogie_Bomb {
             base.OnDisabled();
             UnregisterEvents();
             UnregisterItems();
+            pluginCore = null;
         }
 
         private void RegisterEvents() {
@@ -32,12 +34,11 @@ namespace Boogie_Bomb {
         }
 
         private void RegisterItems() {
-            
+            Config.BoogieBomb.Register();
         }
 
         private void UnregisterItems() {
-            Items.BoogieBomb.Unregister();
-            bombItem = null;
+            Config.BoogieBomb.Unregister();
         }
     }
 }
