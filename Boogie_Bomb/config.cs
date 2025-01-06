@@ -12,7 +12,6 @@ namespace Boogie_Bomb {
     public class config : IConfig {
         public bool IsEnabled {get; set; } = true;
         public bool Debug {get; set; }
-
         public BoogieBomb boogieBomb {get; set; } = new BoogieBomb();
     }
 }

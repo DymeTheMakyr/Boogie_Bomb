@@ -28,7 +28,6 @@ C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\Boogie_B
 C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\Boogie_Bomb.dll
 C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\Boogie_Bomb.pdb
 C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\Assembly-CSharp-Publicized.dll
-C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\AudioPlayer.dll
 C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\CommandSystem.Core.dll
 C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\Exiled.API.dll
 C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\Exiled.CreditTags.dll
@@ -67,11 +66,7 @@ C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\obj\Release\Boogie_B
 C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\obj\Release\Boogie_Bomb.pdb
 C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\Assembly-CSharp-firstpass.dll
 C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\UnityEngine.CoreModule.dll
-C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\UnityEngine.PhysicsModule.dll
 C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\UnityEngine.ParticleSystemModule.dll
-C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\UnityEngine.AudioModule.dll
-C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\UnityEngine.AnimationModule.dll
-C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\UnityEngine.TextRenderingModule.dll
-C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\UnityEngine.InputLegacyModule.dll
-C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\UnityEngine.IMGUIModule.dll
 C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\UnityEngine.SharedInternalsModule.dll
+C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\AudioPlayer-Reboot.dll
+C:\Users\Hugo Simpson\RiderProjects\Boogie_Bomb\Boogie_Bomb\bin\Release\LiteDB.dll

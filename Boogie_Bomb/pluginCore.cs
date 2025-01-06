@@ -34,6 +34,7 @@ namespace Boogie_Bomb {
         }
 
         private void RegisterItems() {
+            Config.boogieBomb.Type = ItemType.GrenadeFlash;
             Config.boogieBomb.Register();
         }
 
