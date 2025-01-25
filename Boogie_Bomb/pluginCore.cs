@@ -1,11 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Boogie_Bomb.Items;
-using Exiled.API.Features;
-using Exiled.CustomItems;
+﻿using Exiled.API.Features;
 using Exiled.CustomItems.API;
-using Exiled.CustomItems.API.Features;
-using MEC;
+using Scp173 = Exiled.Events.Handlers.Scp173;
 
 namespace Boogie_Bomb {
     public class pluginCore : Plugin<config> {
@@ -26,11 +21,11 @@ namespace Boogie_Bomb {
         }
 
         private void RegisterEvents() {
-            
+            Scp173.Blinking += Config.boogieBomb.OnBlinking;
         }
 
         private void UnregisterEvents() {
-            
+            Scp173.Blinking -= Config.boogieBomb.OnBlinking;
         }
 
         private void RegisterItems() {

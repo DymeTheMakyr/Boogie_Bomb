@@ -10,8 +10,10 @@ using Exiled.Events.EventArgs.Map;
 using Exiled.API.Features;
 using AudioPlayer;
 using CommandSystem.Commands.RemoteAdmin;
+using CustomPlayerEffects;
 using Exiled.API.Features.DynamicEvents;
 using Exiled.API.Features.Toys;
+using Exiled.Events.EventArgs.Scp173;
 using MEC;
 using PluginAPI.Roles;
 using SCPSLAudioApi.AudioCore;
@@ -27,25 +29,25 @@ namespace Boogie_Bomb.Items {
         public override string Description { get; set; } = "Gives all humans and SCPs a disco fever for a few seconds.";
         public override float Weight { get; set; } = 0.35f;
 
-        public float Range = 6f;
+        public float Range = 4f;
         
         public override SpawnProperties SpawnProperties { get; set; } = new() {
             Limit = 10,
             DynamicSpawnPoints = new List<DynamicSpawnPoint>() {
                 new() {
-                    Chance = 10.1f,
+                    Chance = 100f,
                     Location = SpawnLocationType.InsideLczWc
                 },
                 new() {
-                    Chance = 15,
+                    Chance = 100,
                     Location = SpawnLocationType.Inside330
                 },
                 new() {
-                Chance = 15,
+                Chance = 100,
                 Location = SpawnLocationType.InsideGr18
                 },
                 new() {
-                    Chance = 25,
+                    Chance = 100,
                     Location = SpawnLocationType.InsideHczArmory
                 },
                 new() {
@@ -59,6 +61,50 @@ namespace Boogie_Bomb.Items {
                 new() {
                     Chance = 100,
                     Location = SpawnLocationType.InsideEscapeSecondary
+                },
+                new() {
+                    Chance = 100,
+                    Location = SpawnLocationType.Inside049Armory
+                },
+                new() {
+                    Chance = 100,
+                    Location = SpawnLocationType.Inside173Armory
+                },
+                new() {
+                    Chance = 100,
+                    Location = SpawnLocationType.Inside330Chamber
+                },
+                new() {
+                    Chance = 100,
+                    Location = SpawnLocationType.Inside914
+                },
+                new() {
+                    Chance = 100,
+                    Location = SpawnLocationType.InsideGateA
+                },
+                new() {
+                    Chance = 100,
+                    Location = SpawnLocationType.InsideGateB
+                },
+                new() {
+                    Chance = 100,
+                    Location = SpawnLocationType.InsideGr18
+                },
+                new() {
+                    Chance = 100,
+                    Location = SpawnLocationType.InsideIntercom
+                },
+                new() {
+                    Chance = 100,
+                    Location = SpawnLocationType.InsideLczCafe
+                },
+                new() {
+                    Chance = 100,
+                    Location = SpawnLocationType.InsideServersBottom
+                },
+                new() {
+                    Chance = 100,
+                    Location = SpawnLocationType.InsideNukeArmory
                 }
             }
         };
@@ -67,10 +113,9 @@ namespace Boogie_Bomb.Items {
         public override float FuseTime { get; set; } = 5f;
 
         protected override void OnExploding(ExplodingGrenadeEventArgs ev) {
-            base.OnExploding(ev);
+            ev.IsAllowed = false;
             Light light = Light.Create(ev.Position + .2f*Vector3.up, Vector3.one, Vector3.one, true, new Color(2, 0, 0,2));
             List<Player> players =  Player.List.Where(x => (x.Position-ev.Position).magnitude <= Range).ToList();
-            Log.Info(players.Count);
             foreach (Player p in players) {p.EnableEffect(EffectType.Exhausted, 100, 3.13f, false);}
             AudioPlayer.API.SoundPlayer.PlaySoundAtPlace("dtyd.ogg", ev.Position, Range*1.5f, "DTYD", ev.Player.Id + 40, false);
             Timing.RunCoroutine(RGBLight(light));
@@ -87,6 +132,10 @@ namespace Boogie_Bomb.Items {
             }
             light.Destroy();
             yield return 0;
+        }
+
+        public void OnBlinking(BlinkingEventArgs ev) {
+            if (ev.Player.IsEffectActive<Ensnared>()) ev.IsAllowed = false;
         }
     }
 }
